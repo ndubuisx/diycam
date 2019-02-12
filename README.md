@@ -1,4 +1,5 @@
 # DIYCam
+[![Build Status](https://travis-ci.org/mcndubuisi/diycam.svg?branch=master)](https://travis-ci.org/mcndubuisi/diycam)
 MLH Beginner Hacker Award Winner (Clemson University Hackathon)
 
 ## Installing
