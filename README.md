@@ -6,7 +6,6 @@ MLH Beginner Hacker Award Winner (Clemson University Hackathon)
 ```
 $ npm install
 $ npm start
-
 ```
 
 ## Contributors
