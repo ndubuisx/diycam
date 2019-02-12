@@ -4,6 +4,8 @@ MLH Beginner Hacker Award Winner (Clemson University Hackathon)
 ## Installing
 
 ```
+$ git clone https://github.com/mcndubuisi/diycam.git
+$ cd diycam
 $ npm install
 $ npm start
 ```
