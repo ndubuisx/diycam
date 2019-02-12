@@ -1,6 +1,14 @@
 # DIYCam
 MLH Beginner Hacker Award Winner (Clemson University Hackathon)
 
+## Installing
+
+```
+$ npm install
+$ npm start
+
+```
+
 ## Contributors
 
 - [Emmanuel Ndubuisi](https://linkedin.com/in/emmanuel-ndubuisi)
