@@ -1,0 +1,26 @@
+extends layout
+
+block variables
+  - const title = "Home - DIYCam"
+  - labels = labels
+
+block content
+  .d-md-flex.h-md-100.align-items-center
+    //- First Half
+    .col-md-6.p-0.bg-green.h-md-100
+      .text-white.d-md-flex.align-items-center.h-100.p-5.text-center.justify-content-center.upload-area
+        .logoarea.pt-5.pb-5
+          .wrapper
+            .file-upload
+              form#upload-form(action="/upload" method="POST" enctype="multipart/form-data")
+                input#file-input(type="file" name="image" accept="image/*")
+                i.icon.ion-md-arrow-up
+    //- Second Half
+    .second-half.col-md-6.p-0.bg-white.h-md-100
+      .d-md-flex.h-md-100.p-5.justify-content-center
+        .p-5.w-100
+          .recycle-container
+          .labels
+            if(labels != undefined)
+              each num in [0,1,2,3]
+                button(class="btn btn-secondary btn-lg btn-block btn-label") #{labels[num].description}

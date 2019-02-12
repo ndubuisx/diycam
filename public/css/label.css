@@ -1,0 +1,263 @@
+.nutritionLabel {
+    border: 2px solid #000;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    line-height: normal;
+    margin: 1.1em auto 1.1em auto;
+    padding: 0.68em;
+    width: 260px;
+}
+
+.nutritionLabel .title {
+    font-size: 2.7em;
+    letter-spacing: -2px;
+    line-height: 0.83em;
+    padding-bottom: 4px;
+    white-space: nowrap;
+}
+
+.nutritionLabel .m {
+    font-size: 0.9em;
+}
+
+.nutritionLabel .serving {
+    font-size: 1.1em;
+    line-height: 1.28em;
+    padding-bottom: 2px;
+}
+
+.nutritionLabel .name {
+    font-size: 1.1em;
+    line-height: 1.3em;
+}
+
+.nutritionLabel .name.inline {
+    padding-top: 0.25em \9;
+    padding-top: 0.2em;
+}
+
+.nutritionLabel .dvCalorieDiet {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.nutritionLabel #calcDisclaimer {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.nutritionLabel .line {
+    border-top: 1px solid #333;
+    padding: 1px 0;
+}
+
+.nutritionLabel .line.last {
+    border-bottom: 1px solid #333;
+}
+
+.nutritionLabel .line.indent {
+    margin-left: 15px;
+}
+
+.nutritionLabel .dv {
+    float: right;
+}
+
+.nutritionLabel .dv:before {
+    content: '\0000a0';
+}
+
+.nutritionLabel .bar1 {
+    background: #333;
+    font-size: 1px;
+    height: 10px;
+    line-height: 0;
+}
+
+.nutritionLabel .bar2 {
+    background: #333;
+    font-size: 1px;
+    height: 5px;
+    line-height: 0;
+}
+
+.nutritionLabel .calorieNote {
+    padding: 0.6em 0 0 0.7em;
+}
+
+.nutritionLabel .star {
+    margin-left: -7px;
+}
+
+.nutritionLabel .tblCalorieDiet {
+    width: 100%;
+}
+
+.nutritionLabel .tblCalorieDiet th {
+    border-bottom: 1px solid #333;
+    color: #777;
+    font-size: 0.7em;
+    text-align: left;
+}
+
+.nutritionLabel .tblCalorieDiet td {
+    color: #777;
+    font-size: 0.7em;
+    line-height: normal;
+    padding: 0;
+}
+
+.nutritionLabel .ar {
+    text-align: right;
+}
+
+.nutritionLabel .fr {
+    float: right;
+}
+
+.nutritionLabel .fl {
+    float: left;
+}
+
+.nutritionLabel .spaceAbove {
+    height: 10px;
+}
+
+.nutritionLabel .setter {
+    left: 0;
+    padding: 3px 0 0;
+    position: absolute;
+    top: 0;
+    width: 12px;
+    z-index: 100;
+}
+
+.nutritionLabel .setter a {
+    display: block;
+    font-size: 1px;
+    height: 7px;
+    line-height: 0;
+    width: 9px;
+}
+
+.nutritionLabel a.unitQuantityUp {
+    background: transparent url("images/up.png") left top no-repeat;
+    padding-bottom: 1px;
+    z-index: 9999;
+}
+
+.nutritionLabel a.unitQuantityDown {
+    background: transparent url("images/down.png") left bottom no-repeat;
+    padding-top: 1px;
+    z-index: 9999;
+}
+
+.nutritionLabel .rel {
+    position: relative;
+}
+
+.nutritionLabel .servingSizeField {
+    float: left;
+    margin-bottom: 0.2em;
+    margin-right: 0.4em;
+    margin-top: 0.2em;
+}
+
+.nutritionLabel .servingUnit {
+    float: left;
+    margin-bottom: 0.2em;
+    margin-top: 0.3em;
+    padding: 0;
+}
+
+.nutritionLabel .servingWeightGrams {
+    margin-bottom: 0.2em;
+    margin-top: 0.3em;
+    padding: 0 0 0 0.3em;
+}
+
+.nutritionLabel .servingSizeText {
+    margin-top: 0.3em;
+    padding-right: 0.3em;
+    display: inline-block;
+}
+
+.nutritionLabel .servingUnitQuantity {
+    margin-top: 0.3em;
+    padding-right: 0.3em;
+}
+
+.nutritionLabel .ingredientListDiv {
+    padding-top: 10px;
+}
+
+.nutritionLabel input.unitQuantityBox {
+    font-size: 0.9em !important;
+    height: 15px;
+    line-height: 15px \9;
+    margin-bottom: 0;
+    margin-left: 15px;
+    padding: 2px;
+    width: 25px;
+}
+
+.nutritionLabel input.unitQuantityBox.ui-input-text {
+    border-radius: 0;
+    box-sizing: content-box;
+    height: auto;
+    margin-top: 0;
+    moz-box-sizing: content-box;
+    webkit-box-sizing: content-box;
+}
+
+.nutritionLabel input.unitQuantityBox.ui-shadow-inset {
+    box-shadow: none;
+}
+
+.nutritionLabel input.unitQuantityBox.arrowsAreHidden {
+    margin-left: 0;
+}
+
+.notApplicable {
+    color: gray;
+    cursor: default;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 0.2em;
+}
+
+.naTooltip {
+    background-color: #ffc;
+    border: 1px solid #000;
+    display: none;
+    height: 18px;
+    padding: 2px;
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    z-index: 10000;
+}
+
+.cf {
+    zoom: 1;
+}
+
+.cf:before {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.ingredientListDiv.scroll {
+    overflow-y: scroll !important;
+}
+
+#calcDisclaimer.scroll {
+    overflow-y: scroll !important;
+}

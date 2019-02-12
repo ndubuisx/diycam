@@ -1,0 +1,43 @@
+{
+  "name": "unnamed",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@angular/cli": "^7.2.3",
+    "@google-cloud/vision": "^0.24.0",
+    "@okta/oidc-middleware": "^0.1.3",
+    "@okta/okta-sdk-nodejs": "^1.1.0",
+    "angular": "^1.7.6",
+    "aws-sdk": "^2.391.0",
+    "azure-cognitiveservices-vision": "^2.0.0",
+    "body-parser": "^1.18.3",
+    "browserify": "^16.2.3",
+    "clarifai": "^2.9.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^6.2.0",
+    "express": "~4.16.0",
+    "express-fileupload": "^1.1.1-alpha.1",
+    "express-session": "^1.15.6",
+    "file-base64": "^1.0.0",
+    "google-locations": "^0.2.0",
+    "google-oauth-jwt": "^0.2.0",
+    "http-errors": "~1.6.2",
+    "microsoft-computer-vision": "^0.4.2",
+    "mongoose": "^5.4.7",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "mysql": "^2.16.0",
+    "node-geocoder": "^3.22.0",
+    "node-mysql-admin": "^0.1.5",
+    "nodeadmin": "^0.1.2",
+    "nutrition-label-jquery-plugin": "^8.0.14",
+    "pug": "2.0.0-beta11",
+    "request": "^2.88.0",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
+  }
+}

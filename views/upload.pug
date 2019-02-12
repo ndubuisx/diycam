@@ -1,0 +1,29 @@
+extends layout
+
+block variables
+  - const title = "Upload"
+  - labels = labels
+
+block content
+  .d-md-flex.h-md-100.align-items-center
+    //- First Half
+    .col-md-6.p-0.bg-green.h-md-100
+      .text-white.d-md-flex.align-items-center.h-100.p-5.text-center.justify-content-center.upload-area
+        .logoarea.pt-5.pb-5
+          .wrapper
+            .file-upload
+              form(action="/upload" method="POST" enctype="multipart/form-data")
+                input#file-input(type="file" name="image" accept="image/*")
+                input#submit(type="submit" value="" hidden)
+                i.icon.ion-md-arrow-up
+              //- i.fa.fa-arrow-up
+              //- input(type='file')
+    //- Second Half
+    .col-md-6.p-0.bg-white.h-md-100
+      .d-md-flex.adiv.h-md-100.p-5.justify-content-center
+        div#nutrition-container
+        div#select-label
+        p #{labels}
+        if(labels != undefined)
+          each num in [0,1,2,3]
+            p #{labels[num].description}

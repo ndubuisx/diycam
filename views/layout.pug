@@ -1,0 +1,56 @@
+block variables
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title #{title}
+    //- include cdn
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    link(rel="stylesheet", href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css")
+    link(href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet")
+    //- include stylesheet
+    link(rel="stylesheet", href="/css/label.css")
+    link(rel="stylesheet", href="/css/main.css")
+    //- include jquery cdn
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    //- include main javascript file
+    script(type="text/javascript" src="/seed.json")
+    script(src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js')
+    link(href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet')
+    script(type="text/javascript" src="/js/main.js")
+  body
+    nav.Navbar
+      a#toggle.Toggle.Navbar-toggle(href='#' data-toggle='collapse' data-target='#navbarCollapse')
+        span
+      a.Navbar-brand.u-pullRight(href='/') DIYCam
+      #navbarCollapse.Navbar-menu
+        ul.Navbar-menu-major
+          li
+            form.search-container
+              input#search-bar(type="text" placeholder="Search...")
+              a
+                i.icon.ion-md-radio-button-off
+          li
+            a(href='/') Home
+          li
+            a(href='/map') Map
+          if user == undefined
+            li
+              a(href='/users/login') Login/Signup
+          else
+            li
+              a(href='/dashboard') Profile
+            li
+              a(href='/users/logout') Logout
+    block content
+
+    script.
+      $('#toggle').click(function() {
+        $(this).toggleClass('is-active');
+        $('#navbarCollapse').toggleClass('is-active');
+      });
+      //- console.log(labels);
+
+        
+
