@@ -3,10 +3,12 @@
 
 let db;
 
+// get JSON file
 $.getJSON("../seed.json", data => {
     db = data;
 });
 
+// helper function for search filter 
 function correctNoun(error, array) {
     let correction = "";
     for (i = 0; i < array.length; i++) {
@@ -21,6 +23,7 @@ function correctNoun(error, array) {
     return correction;
 }
 
+// perform filter to search for the keywords
 function filter(label) {
     const arr = ["bottle", "can", "foil", "glass", "wool"];
     //let find = correctNoun(label, arr);
@@ -35,21 +38,26 @@ function filter(label) {
     return label;
 }
 
+// display DIY container
 function showDIY(label) {
+    // case insensitive
     label = label.toLowerCase();
+    // get data from JSON file
     let data = db[label];
 
+    // if label/data does not exist in database
     if (data == undefined) {
         $('.labels').empty();
         $('.recycle-container').empty();
         let html_temp = `<p>Item cannot be found in our database</p>`;
         $('.recycle-container').append(html_temp);
     } else {
+        // empty container
         $('.labels').empty();
         $('.recycle-container').empty();
 
+        // set new content
         for (i = 0; i < data.length; i++) {
-
             let html_temp = `<div class="card" style="width: 100%;">
             <img class="card-img-top" src="${data[i][2]}" alt="Card image cap">
             <div class="card-body">
@@ -69,8 +77,11 @@ $(document).ready(function() {
         $('#upload-form').submit();
     });
 
+    // when user clicks the appropriate label
     $('.btn-label').click(function() {
+        // get html content from button
         let label = $(this).html();
+        // display content
         showDIY(label);
     });
 
@@ -83,9 +94,13 @@ $(document).ready(function() {
         $('.ion-md-radio-button-off').css({ 'color': '#fff', 'transition': '0.40s ease' });
     });
 
+    // handle search feature
     $('.ion-md-radio-button-off').click(function() {
+        // get search input value 
         let label = $('#search-bar').val();
+        // look for keyword
         label = filter(label);
+        // if the user input is not empty
         if (label.length != 0) {
             // close navbar on search
             $('#toggle').toggleClass('is-active');
@@ -94,14 +109,14 @@ $(document).ready(function() {
         }
     });
 
+    // handle map feature
     $('.map-bar').keypress(function(e) {
+        // empty before display
         $('#map').empty();
         if (e.which == 13) {
             $('.map-bar').submit();
             $('#map').empty();
         }
         $('#map').empty();
-        // return false;
     });
-
 });
