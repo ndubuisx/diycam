@@ -1,9 +1,12 @@
+// initialize dependencies
 const express = require('express');
 const multer = require('multer');
 const AWS = require('aws-sdk');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
+
+// storage location and storage file name format
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, 'public/storage');
@@ -16,11 +19,14 @@ const upload = multer({ storage: storage });
 
 require('dotenv').config();
 
+// google cloud vision dependency
 const vision = require('@google-cloud/vision');
 // Creates a client
 const client = new vision.ImageAnnotatorClient({ keyFilename: 'credentials.json' });
+// set initial value of labels to undefined
 let labels = undefined;
 
+// AWS s3 authentication
 AWS.config.update({
     accessKeyId: process.env.AMAZON_KEY_ID,
     secretAccessKey: process.env.AMAZON_SECRET
@@ -43,15 +49,19 @@ function getLabels(filepath) {
 }
 
 router.post('/', upload.single('image'), (req, res, next) => {
+    // assign uploaded file to file variable
     const file = req.file;
+    // handle exception
     if (!file) {
         const error = new Error('Please upload a file');
         error.httpStatusCode = 400;
         return next(error);
     }
+
+    // file path for AWS s3
     let filepath = path.join(__dirname, `../public/storage/${file["filename"]}`);
 
-
+    // initiliaze AWS s3 parameters
     var params = {
         Bucket: 'unnamed-node',
         Body: fs.createReadStream(filepath),
@@ -69,6 +79,7 @@ router.post('/', upload.single('image'), (req, res, next) => {
             console.log("Uploaded in:", data.Location);
         }
 
+        // call google cloud vision function
         getLabels(data.Location)
             .then((labels) => {
                 console.log(labels);
