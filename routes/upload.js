@@ -79,7 +79,7 @@ router.post('/', upload.single('image'), (req, res, next) => {
             console.log("Uploaded in:", data.Location);
         }
 
-        // call google cloud vision function
+        // call google cloud vision function (getLabels())
         getLabels(data.Location)
             .then((labels) => {
                 console.log(labels);
